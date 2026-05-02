@@ -6,9 +6,9 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, process.cwd(), '');
   
-  // Extrai dinamicamente o nome do repositório no GitHub Actions, ou usa fallback
-  const githubRepo = process.env.GITHUB_REPOSITORY;
-  const basePath = githubRepo ? `/${githubRepo.split('/')[1]}/` : (process.env.NODE_ENV === 'production' ? '/NOME-DO-REPO/' : '/');
+  // Para domínio próprio (amazonenglish.com.br), o base deve ser '/'
+  // Se fosse o padrão do github.io sem domínio, seria '/nome-do-repo/'
+  const basePath = '/';
 
   return {
     base: basePath,
