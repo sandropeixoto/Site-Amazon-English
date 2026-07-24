@@ -1,13 +1,27 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import fs from 'fs';
 import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, process.cwd(), '');
   
-  // Utiliza caminho relativo ('./') para funcionar tanto em subdiretórios do GitHub Pages (/Site-Amazon-English/) quanto em domínios próprios (amazonenglish.com.br)
-  const basePath = process.env.BASE_PATH || './';
+  let basePath = process.env.BASE_PATH;
+
+  if (!basePath) {
+    const cnamePath = path.resolve(__dirname, 'public/CNAME');
+    const hasCNAME = fs.existsSync(cnamePath) && fs.readFileSync(cnamePath, 'utf-8').trim().length > 0;
+
+    if (hasCNAME) {
+      basePath = '/';
+    } else if (process.env.GITHUB_REPOSITORY) {
+      const repoName = process.env.GITHUB_REPOSITORY.split('/')[1];
+      basePath = `/${repoName}/`;
+    } else {
+      basePath = '/';
+    }
+  }
 
   return {
     base: basePath,
