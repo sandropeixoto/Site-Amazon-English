@@ -117,19 +117,37 @@ export function Methodology() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="rounded-3xl bg-gradient-to-r from-emerald-900/40 to-cyan-900/40 border border-emerald-500/20 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+          className="rounded-3xl bg-gradient-to-r from-emerald-900/40 to-cyan-900/40 border border-emerald-500/20 p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden relative"
         >
-          <div className="flex items-center gap-8">
-            <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
-               <Award className="w-10 h-10 text-emerald-400" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:w-3/5">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shrink-0 shadow-lg shadow-emerald-500/10">
+               <Award className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-400" />
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white mb-2">Reconhecimento do Esforço</h3>
-              <p className="text-slate-300 max-w-xl">
-                Ao completar todas as etapas do curso e concluir todos os exercícios, você receberá um 
-                <strong className="text-emerald-400 font-medium"> certificado de conclusão</strong> 
+              <p className="text-slate-300 leading-relaxed">
+                Ao completar todas as etapas do curso e concluir todos os exercícios, você receberá um{" "}
+                <strong className="text-emerald-400 font-medium">certificado de conclusão</strong>{" "}
                 reconhecendo sua competência no idioma inglês.
               </p>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
+            <div className="relative group max-w-md w-full rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-950/50 bg-slate-900/80 backdrop-blur-md hover:border-emerald-400/60 transition-all duration-300">
+              <img 
+                src="certificado.jpg" 
+                alt="Certificado de Conclusão Amazon English" 
+                className="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.dataset.triedPublic) {
+                    target.dataset.triedPublic = 'true';
+                    target.src = '/certificado.jpg';
+                  }
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-40 group-hover:opacity-10 transition-opacity pointer-events-none" />
             </div>
           </div>
         </motion.div>
