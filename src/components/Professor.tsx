@@ -18,9 +18,9 @@ export function Professor() {
             <div className="aspect-[4/5] rounded-3xl overflow-hidden relative bg-slate-900 border border-white/10">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e] via-transparent to-transparent z-10" />
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+                src="foto_regis.jpg" 
                 alt="Professor José Regis Junior" 
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover object-top"
               />
               
               <div className="absolute bottom-8 left-8 right-8 z-20">

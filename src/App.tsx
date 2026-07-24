@@ -4,6 +4,7 @@ import { Professor } from './components/Professor';
 import { CourseOverview } from './components/CourseOverview';
 import { Methodology } from './components/Methodology';
 import { Footer } from './components/Footer';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Methodology />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { GraduationCap, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { GraduationCap, Mail, Phone, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
@@ -16,16 +16,10 @@ export function Footer() {
               Dominando o Inglês no Ritmo da Vida Moderna. Adapte o aprendizado à sua rotina com nossa metodologia inovadora e prática.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors text-slate-400">
-                <Instagram className="w-5 h-5" />
+              <a href="https://wa.me/5591991776453" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors text-slate-400" title="WhatsApp">
+                <MessageCircle className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors text-slate-400">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors text-slate-400">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors text-slate-400">
+              <a href="mailto:suporte@amazonenglish.com" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors text-slate-400" title="E-mail">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -44,9 +38,16 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6">Contato</h4>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li>suporte@amazonenglish.com</li>
-              <li>+55 (11) 99999-9999</li>
-              <li>Av. Principal, 1000 - Centro</li>
+              <li>
+                <a href="mailto:suporte@amazonenglish.com" className="hover:text-emerald-400 transition-colors flex items-center gap-2">
+                  <Mail className="w-4 h-4" /> suporte@amazonenglish.com
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5591991776453" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors flex items-center gap-2 text-emerald-400 font-medium">
+                  <Phone className="w-4 h-4" /> +55 (91) 99177-6453 (WhatsApp)
+                </a>
+              </li>
             </ul>
           </div>
         </div>

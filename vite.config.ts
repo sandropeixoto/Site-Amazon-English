@@ -6,9 +6,8 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, process.cwd(), '');
   
-  // Para domínio próprio (amazonenglish.com.br), o base deve ser '/'
-  // Se fosse o padrão do github.io sem domínio, seria '/nome-do-repo/'
-  const basePath = '/';
+  // Utiliza caminho relativo ('./') para funcionar tanto em subdiretórios do GitHub Pages (/Site-Amazon-English/) quanto em domínios próprios (amazonenglish.com.br)
+  const basePath = process.env.BASE_PATH || './';
 
   return {
     base: basePath,

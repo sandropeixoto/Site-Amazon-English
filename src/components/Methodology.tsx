@@ -101,9 +101,14 @@ export function Methodology() {
                </div>
              </div>
 
-             <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-semibold flex justify-center items-center gap-2">
+             <a 
+               href="https://wa.me/5591991776453"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all font-semibold flex justify-center items-center gap-2"
+             >
                Participar como Aluno
-             </button>
+             </a>
           </motion.div>
         </div>
 
